@@ -1,0 +1,5 @@
+RDS_HOST="rtc-transformation-instance.cmpcqkmi2y1q.us-east-1.rds.amazonaws.com"
+RDS_DB = "rtc"
+RDS_USER = "abhi0618"
+RDS_PASSWORD = "abhi1234"
+RDS_PORT = 5432  # PostgreSQL default port

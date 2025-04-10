@@ -11,7 +11,7 @@ from statistics import mean
 # S3 Configuration
 BUCKET_NAME = 's3-pace-data-bucket'
 SOURCE_FILE_KEY = 'pace-data.csv'
-ENRICHED_FILE_KEY = 'enriched.csv'
+ENRICHED_FILE_KEY = 'enriched-transformations-s3-rds.csv'
 
 # Local temporary file path
 ENRICHED_LOCAL_FILE = '/tmp/enriched.csv'

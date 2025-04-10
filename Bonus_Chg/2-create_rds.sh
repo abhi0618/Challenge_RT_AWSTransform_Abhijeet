@@ -28,3 +28,6 @@ aws rds create-db-instance \
     ##--storage-type gp2
 
 echo "RDS instance $DB_INSTANCE_IDENTIFIER created."
+
+
+
