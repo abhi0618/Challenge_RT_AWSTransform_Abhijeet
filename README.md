@@ -4,13 +4,15 @@ Overview:
 This project automates the ingestion and enrichment of a CSV file using AWS services. When a specific file is uploaded to an S3 bucket, a Lambda function is triggered to read, transform, and upload the enriched data to another S3 file and to a MySQL RDS database.
 
 The project is organized in three main phases:
-- Step A : Download csv from S# bucket, Perform Transformations, and uploading enriched.csv to Posgresql
+- Step A : Download csv from S# bucket, Perform Transformations, and uploading enriched.csv to Posgresql(Snapshot provided at RioTintoChallenge_StepA_output.png)
 - Step B: IAM setup, S3 bucket creation, and Lambda trigger configuration
-- Bonus: Lambda function for CSV processing and storing results to RDS using Mysql (to show proficiency with both mysql and rds)
+- Bonus: Lambda function for CSV processing and storing results to RDS using Mysql (to show proficiency with both mysql and rds) (Snapshot provided at RioTintoChallenge_StepB_output.png)
 
 
 STEP A: The Notebook Challenge_1stStep.ipynb takes care of all operations using pandas
 It first reads the csv from the S3 bukcket, performs transformations , and then saves contents of enriched csv to an Posgresql DB. Snapshot is included in RioTintoChallenge_StepA_output.png
+
+
 ------------------------------------------------------------
 STEP B: S3 File Upload, IAM User, and Lambda Trigger Setup
 ------------------------------------------------------------
@@ -35,7 +37,7 @@ STEP B: S3 File Upload, IAM User, and Lambda Trigger Setup
    - This triggers the Lambda function set up in Step B.
 
 ------------------------------------------------------------
-STEP B: Lambda Setup, CSV Enrichment, and RDS Upload
+STEP B(BOnus): Lambda Setup, CSV Enrichment, and RDS Upload
 ------------------------------------------------------------
 
 This step outlines the deployment of the core Lambda function which performs the data transformation and database insert.
@@ -86,9 +88,7 @@ To handle dependency size limitations and avoid packaging bulky modules in Lambd
    - Retrieve the Layer ARN and attach it to the Lambda function using aws lambda update-function-configuration.
    - Ensure both Lambda and the Layer are in the same region.
 
-3. Replace psycopg2 with pymysql:
-   - Update the Lambda function code to use pymysql for database connection.
-   - Modify connection strings accordingly.
+.
 
 Important Notes:
 - The layer must match the Python runtime (e.g., python3.11).
