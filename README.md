@@ -4,7 +4,7 @@ Overview:
 This project automates the ingestion and enrichment of a CSV file using AWS services. When a specific file is uploaded to an S3 bucket, a Lambda function is triggered to read, transform, and upload the enriched data to another S3 file and to a MySQL RDS database.
 
 The project is organized in three main phases:
-- Step A : Download csv from S# bucket, Perform Transformations, and uploading enriched.csv to Posgresql(Snapshot provided at RioTintoChallenge_StepA_output.png)
+- Step A : Download csv from S3 bucket, Perform Transformations, and uploading enriched.csv to Posgresql(Snapshot provided at RioTintoChallenge_StepA_output.png)
 - Step B: IAM setup, S3 bucket creation, and Lambda trigger configuration
 - Bonus: Lambda function for CSV processing and storing results to RDS using Mysql (to show proficiency with both mysql and rds) (Snapshot provided at RioTintoChallenge_StepB_output.png)
 
