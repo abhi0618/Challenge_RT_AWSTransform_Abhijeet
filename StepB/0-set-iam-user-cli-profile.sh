@@ -3,8 +3,6 @@
 # Set up CLI for an IAM User
 
 IAM_USER_PROFILE="admin-profile"
-AWS_ACCESS_KEY_ID="AKIA5MSUBTA5QHQCHDQK"
-AWS_SECRET_ACCESS_KEY="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"
 AWS_REGION="us-east-1"
 
 echo "🔧 Configuring AWS CLI for IAM user profile: $IAM_USER_PROFILE"
