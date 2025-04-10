@@ -9,7 +9,8 @@ The project is organized in three main phases:
 - Bonus: Lambda function for CSV processing and storing results to RDS using Mysql (to show proficiency with both mysql and rds)
 
 
-STEP B
+STEP A: The Notebook Challenge_1stStep.ipynb takes care of all operations using pandas
+It first reads the csv from the S3 bukcket, performs transformations , and then saves contents of enriched csv to an Posgresql DB. Snapshot is included in RioTintoChallenge_StepA_output.png
 ------------------------------------------------------------
 STEP B: S3 File Upload, IAM User, and Lambda Trigger Setup
 ------------------------------------------------------------
