@@ -25,6 +25,8 @@ aws rds create-db-instance \
     --port $DB_PORT \
     --no-publicly-accessible \
     --region $AWS_REGION \
+    --publicly-accessible \
+    --no-multi-az \
     ##--storage-type gp2
 
 echo "RDS instance $DB_INSTANCE_IDENTIFIER created."
