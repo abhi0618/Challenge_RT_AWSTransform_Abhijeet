@@ -3,3 +3,36 @@ RDS_DB = "rtc"
 RDS_USER = "abhi0618"
 RDS_PASSWORD = "abhi1234"
 RDS_PORT = 5432  # PostgreSQL default port
+
+
+aws lambda update-function-configuration \
+  --function-name s3-rds-transformation-function \
+  --layers arn:aws:lambda:us-east-1:$ACCOUNT_ID:layer:psycopg2-py311:1
+
+
+# === General AWS Setup ===
+AWS_REGION="us-east-1"
+ACCOUNT_ID="920373008443"  # Replace with actual account ID
+
+# === S3 Setup ===
+S3_BUCKET_NAME="s3-pace-data-bucket"
+ZIP_FILE_NAME="s3_rds_lambda_function.zip"
+PYTHON_FILE_NAME="s3_rds_lambda_function.py"
+
+# === Lambda Setup ===
+FUNCTION_NAME="s3-rds-transformation-function"
+ROLE_NAME="lambda-rds-s3-role"
+RUNTIME="python3.11"
+HANDLER="s3_rds_lambda_function.lambda_handler"
+TIMEOUT="30"
+MEMORY="128"
+
+# === RDS Setup ===
+DB_INSTANCE_IDENTIFIER="rtc-transformation-instance-mysql"
+DB_NAME="rtc"
+DB_USER="abhi0618"
+DB_PASSWORD="abhi1234"
+DB_INSTANCE_CLASS="db.t3.micro"
+DB_ENGINE="mysql"
+DB_STORAGE="20"
+DB_PORT="3306"

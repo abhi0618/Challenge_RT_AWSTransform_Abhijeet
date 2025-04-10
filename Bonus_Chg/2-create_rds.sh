@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables (Set these at the beginning of the script)
-DB_INSTANCE_IDENTIFIER="rtc-transformation-instance"
+DB_INSTANCE_IDENTIFIER="rtc-transformation-instance-mysql"
 DB_NAME="rtc"
 DB_USER="abhi0618"
 DB_PASSWORD="abhi1234"  # Make sure the password follows RDS password policies
