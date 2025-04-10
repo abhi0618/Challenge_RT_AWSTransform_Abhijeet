@@ -1,0 +1,34 @@
+# S3 File Upload Script with Custom IAM Policies
+
+This script automates the creation of an IAM user, attaches a custom S3 access policy, stores the access keys securely using AWS Systems Manager Parameter Store, and allows the user to upload a file to an S3 bucket.
+
+## Overview of Steps
+The script performs the following highlighted steps, to describe familiarity with the concepts and tools :
+
+1. **Create a Custom S3 Access Policy**:
+   - A custom IAM policy (`Chg_StepA-s3-Upload-read-policy.json`) is created to grant permissions for uploading and downloading files from a specified S3 bucket.
+   - The policy includes permissions such as `s3:PutObject`, `s3:GetObject`, and `s3:ListBucket` for the S3 resources.
+
+2. **Create IAM User and Attach the Custom Policy**:
+   - An IAM user (`StepA-upload-s3-bucket`) is created.
+   - The custom S3 access policy is attached to the IAM user using the `aws iam put-user-policy` command.
+   - This user is granted access only to the specified S3 bucket, ensuring security and least-privilege access.
+
+3. **Store Access Keys in AWS Systems Manager Parameter Store**:
+   - The access keys generated for the IAM user are stored in **AWS Systems Manager Parameter Store**.
+
+    - AWS Systems Manager Parameter Store is included in the AWS Free Tier for standard parameters, making it a cost-effective choice for securely storing sensitive data such as IAM access keys. Unlike AWS Secrets Manager, which incurs charges for storing secrets (Starts a 30 day trial period initially), Systems Manager allows for secure storage and retrieval of configuration data without additional costs, making it an ideal solution for basic use cases under the Free Tier.
+
+   - The keys are encrypted and retrieved securely using `aws ssm get-parameter`. This avoids hardcoding sensitive information in scripts.
+   - The keys are retrieved and set in the AWS CLI profile for later use in S3 operations.
+
+4. **File Upload Options**:
+   - The script provides the user with options to upload a file from a local path or directly from another S3 URL.
+   - Depending on the choice, the file is uploaded to the specified S3 bucket.
+
+## Script Highlights
+
+### Part 1: Custom IAM Policy Creation
+The script uses the following commands:
+- **Custom Policy Creation**: A custom policy JSON file is uploaded to S3, and then attached to the IAM user to grant S3 permissions.
+
