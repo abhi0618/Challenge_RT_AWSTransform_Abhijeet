@@ -23,11 +23,10 @@ STEP B: S3 File Upload, IAM User, and Lambda Trigger Setup
    - Policy file used: Chg_StepA-s3-Upload-read-policy.json.
 
 2. Create IAM User and Attach Policy:
-   - IAM user is named StepA-upload-s3-bucket.
    - This user is restricted to operate only on the required S3 bucket.
    - IAM policies are attached using CLI.
 
-3. Store Access Keys in AWS Systems Manager Parameter Store:
+3. Store Access Keys in AWS Systems Manager Parameter Store(As Seret manager start a free trial and has a billing activated after that ):
    - Secrets are stored securely using SSM (Parameter Store).
    - This avoids hardcoding secrets and is free under AWS Free Tier.
    - Access keys are retrieved dynamically and used with AWS CLI profiles.
@@ -37,7 +36,7 @@ STEP B: S3 File Upload, IAM User, and Lambda Trigger Setup
    - This triggers the Lambda function set up in Step B.
 
 ------------------------------------------------------------
-STEP B(BOnus): Lambda Setup, CSV Enrichment, and RDS Upload
+STEP B(With Bonus): Lambda Setup, CSV Enrichment, and RDS Upload
 ------------------------------------------------------------
 
 This step outlines the deployment of the core Lambda function which performs the data transformation and database insert.
@@ -107,4 +106,4 @@ Execution Summary:
 ------------------------------------------------------------
 Contact:
 Abhijeet Bhattacharya
-Email: abhibhattacharya618@gmail.com
+Email: abhibhattacharya000618@gmail.com
