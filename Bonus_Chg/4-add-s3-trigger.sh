@@ -2,7 +2,7 @@
 
 # === Variables ===
 BUCKET_NAME="s3-pace-data-bucket"
-FUNCTION_NAME="processFileFunctiononTrigger"
+FUNCTION_NAME="s3-rds-transformation-function"
 REGION="us-east-1"
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 
@@ -27,7 +27,7 @@ cat <<EOF > s3-notification-config.json
           "FilterRules": [
             {
               "Name": "suffix",
-              "Value": ".csv"
+              "Value": "pace-data.csv"
             }
           ]
         }
