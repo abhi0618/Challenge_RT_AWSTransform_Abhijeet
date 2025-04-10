@@ -13,7 +13,7 @@ SUBNET_IDS="subnet-xxxxxx,subnet-yyyyyy"      # Subnet IDs (update accordingly)
 DB_STORAGE="20"                              # Allocated storage in GB
 DB_BACKUP_RETENTION="7"                      # Backup retention period in days
 DB_ENGINE_VERSION="12.4"                     # PostgreSQL engine version (optional)
-DB_AUTO_MINOR_VERSION_UPGRADE="true"         # Set to true if you want auto minor version upgrades
+DB_AUTO_MINOR_VERSION_UPGRADE="false"         # Set to true if you want auto minor version upgrades
 DB_MULTI_AZ="false"                          # Set to true if you want multi-AZ deployment
 
 # Set the AWS Region (modify as needed)
